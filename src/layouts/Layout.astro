@@ -10,7 +10,17 @@ const { title = 'Astro' } = Astro.props
 
 <html lang="en">
   <Head {title} />
-  <body>
+  <body class="m-auto max-w-3xl">
     <slot />
   </body>
 </html>
+
+<style is:global>
+  @import "tailwindcss";
+
+  body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-inter);
+  }
+</style>
