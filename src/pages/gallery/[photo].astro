@@ -1,0 +1,25 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import Layout from '@layouts/Layout.astro'
+import type { GetStaticPaths } from 'astro'
+
+export const getStaticPaths = (async () => {
+  const photos = await getCollection('gallery')
+  return photos.map((photo) => {
+    return {
+      params: { id: photo.id },
+      props: { photo }
+    }
+  })
+}) satisfies GetStaticPaths
+
+interface Props {
+  post: CollectionEntry<'gallery'>
+}
+
+const { post } = Astro.props
+---
+
+<Layout title={post.data.title}>
+  {/* TODO: Display the image + pagination */}
+</Layout>

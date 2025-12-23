@@ -1,5 +1,6 @@
 ---
 import { Font } from 'astro:assets'
+import { ClientRouter } from 'astro:transitions'
 import { Head as CapoHead } from 'astro-capo'
 
 interface Props {
@@ -16,5 +17,6 @@ const { title } = Astro.props
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <Font cssVariable='--font-inter' />
+  <ClientRouter />
   <title>{title}</title>
 </CapoHead>
