@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-inter: var(--font-inter);
+}
+
+@layer base {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+}
